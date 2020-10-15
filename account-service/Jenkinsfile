@@ -1,3 +1,4 @@
+
 pipeline {​​​​​​
 
      agent any   
@@ -27,6 +28,7 @@ pipeline {​​​​​​
          }​​​​​​
 
      }​​​​​​
+
 /*
 node {
 
@@ -36,7 +38,7 @@ node {
             git url: 'https://github.com/sairamakrishna137/microservice1.git', credentialsId: 'github', branch: 'main'
         }
         stage('Build') {
-            mvn clean install
+            bat 'mvn clean install'
 
             def pom = readMavenPom file:'pom.xml'
             print pom.version
@@ -44,7 +46,9 @@ node {
         }
       }
      }
+<<<<<<< HEAD
  */      
+
 /*pipeline
         stage('Image') {
             dir ('account-service') {
