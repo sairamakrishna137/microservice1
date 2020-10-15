@@ -1,3 +1,33 @@
+pipeline {​​​​​​
+
+     agent any   
+
+     stages {​​​​​​
+
+         stage('Checkout') {​​​​​​
+
+            steps {​​​​​​
+
+         git url: 'https://github.com/sairamakrishna137/microservice1.git', credentialsId: 'github', branch: 'main'
+
+      }​​​​​​
+
+         }​​​​​​
+
+         stage('Build') {​​​​​​
+
+             steps {​​​​​​               
+
+                 bat 'mvn clean install'               
+
+                 }​​​​​​
+
+             }​​​​​​      
+
+         }​​​​​​
+
+     }​​​​​​
+/*
 node {
 
     withMaven(maven:'maven') {
@@ -14,7 +44,7 @@ node {
         }
       }
      }
-       
+ */      
 /*pipeline
         stage('Image') {
             dir ('account-service') {
